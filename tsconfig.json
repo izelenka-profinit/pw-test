@@ -3,7 +3,7 @@
       "target": "ESNext",                             // Cíl kompilace, ES6 zajišťuje moderní JavaScript
       "module": "commonjs",                           // Použití CommonJS modulů (vhodné pro Node.js)
       "sourceMap": true,                              // Vytváří sourcemapy, které pomáhají při ladění tím, že umožňují mapování JS zpět na původní TS
-      "strict": true,                                 // Zapíná přísný režim TypeScriptu
+      "strict": false,                                 // Zapíná přísný režim TypeScriptu
       "strictNullChecks": false,                      // Vypíná kontrolu null hodnot
       "noImplicitAny": true,                          // Zakazuje použití typu "any"
       "noImplicitThis": true,                         // Zakazuje použití "this" přiřazení bez určeného typu v metodách tříd a funkcích.
@@ -18,6 +18,7 @@
       "outDir": "dist",                               // Cesta, kam budou zkompilované JS soubory uloženy (pokud budete kompilovat)
       "rootDirs": ["tests", "src"]                    // Cesta k testům (TypeScript kód)
     },
-    "include": ["tests/**/*.ts"],                     // Zahrnuje všechny TypeScript soubory v testovacím adresáři
+    // "include": ["tests/**/*.ts"],                     // Zahrnuje všechny TypeScript soubory v testovacím adresáři
+    "include": ["examples/**/*.ts"],                     // Zahrnuje všechny TypeScript soubory v testovacím adresáři
     "exclude": ["node_modules"]                       // Vylučuje složku node_modules
 }
