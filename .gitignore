@@ -1,6 +1,6 @@
 # Local
 _deffer/
-.vscode/
+.vscode
 .DS_Store/
 node_module/
 
