@@ -8,10 +8,26 @@ import { defineConfig, devices } from '@playwright/test';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
+// Default timeout 
+const TIMEOUTS = {
+  GLOBAL_TIMEOUT: 180_000,
+  TEST_TIMEOUT: 90_000,
+  ACTION_TIMEOUT: 60_000
+};
+
+// Default viewport size
+const DEFAULT_VIEWPORT = {
+  with: 1920,
+  height: 1080
+}
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  timeout: TIMEOUTS.TEST_TIMEOUT,
+  globalTimeout: TIMEOUTS.GLOBAL_TIMEOUT,
+
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -29,7 +45,15 @@ export default defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    // trace: 'on-first-retry',
+    trace: 'off',
+
+    testIdAttribute: 'data-testId',
+    viewport: DEFAULT_VIEWPORT,
+    video: 'off',
+    
+
+
   },
 
   /* Configure projects for major browsers */
