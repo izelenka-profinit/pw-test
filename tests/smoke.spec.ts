@@ -3,6 +3,8 @@
 // npx playwright show-report
 
 import { expect, test } from "@playwright/test"
+import dotenv from 'dotenv'
+dotenv.config();
 
 test.describe("příklad Test Suite", () => {
     test("User login", async ({ page }) => {
